@@ -20,13 +20,13 @@ Verify
 
 For Jupyter Notebook
 
-    $ sudo docker run -it -p 8889:8888 -v /home/akhil/Desktop/remote:/home/jovyan/work jupyter/pyspark-notebook
+    $ sudo docker run --rm -it -p 8889:8888 -v "$PWD":/home/jovyan jupyter/pyspark-notebook
 
 This command will:
 
 1. Start the docker container
 
-2. mount the local directory ""$PWD" inside the container at the location "/home/ucsddse230/work"
+2. mount the local directory "$PWD" inside the container at the location "/home/jovyan"
 
 3. Forward requests to port 8889 on the local system from port 8888 inside the docker container.
 
