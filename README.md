@@ -10,7 +10,7 @@ https://docs.docker.com/v17.09/engine/installation/linux/docker-ce/ubuntu/#insta
 
 2. Pull the Docker image
 
-    $ sudo docker pull ucsddse230/cse255-dse230
+    $ docker pull jupyter/pyspark-notebook
 
 Verify
 
@@ -19,12 +19,16 @@ Verify
 ## Running Docker Images ##
 
     $ sudo docker run -it -p 8889:8888 -v /media/akhil/750GB/Courses/Coursera/dlaicourse:/home/ucsddse230/work ucsddse230/cse255-dse230 /bin/bash
+    
+    $ sudo docker run --rm -it -p 8889:8888 -v "$PWD":/home/ucsddse230/work ucsddse230/cse255-dse230 /bin/bash
+    
+    $ sudo docker run --rm -p 10000:8888 -e JUPYTER_ENABLE_LAB=yes -v "$PWD":/home/jovyan/work jupyter/datascience-notebook:9b06df75e445
 
 This command will:
 
 1. Start the docker container
 
-2. mount the local directory "/media/akhil/750GB/Courses/Coursera/dlaicourse" inside the container at the location "/home/ucsddse230/work"
+2. mount the local directory ""$PWD" inside the container at the location "/home/ucsddse230/work"
 
 3. Forward requests to port 8889 on the local system from port 8888 inside the docker container.
 
