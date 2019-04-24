@@ -1,4 +1,4 @@
-# docker_spark
+# docker_pyspark
 
 # Software Installation Directions #
 
