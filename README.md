@@ -18,11 +18,9 @@ Verify
 
 ## Running Docker Images ##
 
-    $ sudo docker run -it -p 8889:8888 -v /media/akhil/750GB/Courses/Coursera/dlaicourse:/home/ucsddse230/work ucsddse230/cse255-dse230 /bin/bash
-    
-    $ sudo docker run --rm -it -p 8889:8888 -v "$PWD":/home/ucsddse230/work ucsddse230/cse255-dse230 /bin/bash
-    
-    $ sudo docker run --rm -p 10000:8888 -e JUPYTER_ENABLE_LAB=yes -v "$PWD":/home/jovyan/work jupyter/datascience-notebook:9b06df75e445
+For Jupyter Notebook
+
+    $ sudo docker run -it -p 8889:8888 -v /home/akhil/Desktop/remote:/home/jovyan/work jupyter/pyspark-notebook
 
 This command will:
 
@@ -39,3 +37,7 @@ Run the following commands to start jupyter at http://localhost:8889 by issuing 
 This will start jupyter at port 8888 inside the docker container, which will be accessible outside the docker at port 8889.
 
 Go ahead open your web browser and put "localhost:8889" in the address bar. You should now be able to see the Jupyter Notebook webpage.
+
+For Jupyter Lab
+
+    $ sudo docker run --rm -p 10000:8888 -e JUPYTER_ENABLE_LAB=yes -v "$PWD":/home/jovyan/work jupyter/datascience-notebook:9b06df75e445
